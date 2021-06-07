@@ -16,13 +16,14 @@
 			    http://www.springframework.org/schema/mvc
 			    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
     <!--    dao层配置开始-->
     <!--    配置数据库连接池-->
     <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql:///maven_ssm"/>
-        <property name="username" value="root"/>
-        <property name="password" value="ysd123456"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
     <!--    配置生产sqlsession对象的工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -38,6 +39,7 @@
 
     <!--    service层配置文件开始-->
     <!--    组件扫描配置-->
+
     <context:component-scan base-package="com.itheima">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
