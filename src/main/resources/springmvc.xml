@@ -26,7 +26,7 @@
     <!--    视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="suffix" value=".jsp"></property>
-        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <property name="prefix" value="/pages/"></property>
     </bean>
 
     <!--    释放静态资源-->
