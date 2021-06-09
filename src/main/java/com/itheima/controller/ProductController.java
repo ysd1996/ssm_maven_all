@@ -21,7 +21,16 @@ public class ProductController {
         ModelAndView mv = new ModelAndView();
         List<Product> products = productService.findAll();
         mv.addObject("productList",products);
-        mv.setViewName("product-list");
+        mv.setViewName("product-list1_1");
         return mv;
+    }
+
+
+    @RequestMapping("/save.do")
+    public String  save(Product product){
+
+        productService.save(product);
+
+        return "redirect:findAll.do";
     }
 }
