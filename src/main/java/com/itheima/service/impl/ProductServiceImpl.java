@@ -1,5 +1,6 @@
 package com.itheima.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.itheima.dao.ProductDao;
 import com.itheima.domain.Product;
 import com.itheima.service.ProductService;
@@ -17,8 +18,12 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public List<Product> findAll() {
-        return productDao.findAll();
+    public List<Product> findAll(Integer page,Integer size) {
+
+        PageHelper pageHelper = new PageHelper();
+        pageHelper.startPage(page,size);
+        List<Product> products = productDao.findAll();
+        return products;
     }
 
     public void save(Product product) {

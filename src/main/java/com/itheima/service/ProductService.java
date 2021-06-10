@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    public List<Product> findAll();
+    public List<Product> findAll(Integer page,Integer size);
 
     public void save(Product product);
 }

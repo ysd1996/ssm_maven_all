@@ -24,4 +24,12 @@ public class OrdersControllerr {
         mv.setViewName("orders-list_1");
         return mv;
     }
+
+    @RequestMapping("/findById.do")
+    public ModelAndView findById(@RequestParam(name = "id",required = true) String ordersId){
+        ModelAndView mv = new ModelAndView();
+        Orders orders = ordersService.findById(ordersId);
+
+        return mv;
+    }
 }
