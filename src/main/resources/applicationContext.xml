@@ -28,6 +28,21 @@
     <!--    配置生产sqlsession对象的工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="druidDataSource"/>
+<!--        pagehelper插件-->
+        <property name="plugins">
+            <array>
+<!--                传入插件对象-->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">mysql</prop>
+                            <prop key="resonable">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+
+        </property>
         <!--        扫描pojo包，给包下所有的pojo起别名  -->
         <property name="typeAliasesPackage" value="com.itheima.domian"/>
     </bean>

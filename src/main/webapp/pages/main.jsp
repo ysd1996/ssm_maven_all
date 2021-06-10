@@ -141,8 +141,7 @@
 		<!-- 内容区域 -->
 		<div class="content-wrapper">
 
-			<img src="${pageContext.request.contextPath}/img/center.jpg"
-				width="100%" height="100%" />
+			<img src="${pageContext.request.contextPath}/img/center.jpg" width="100%" height="100%" />
 
 		</div>
 		<!-- 内容区域 /-->

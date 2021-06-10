@@ -131,18 +131,16 @@
 	<div class="wrapper">
 
 		<!-- 页面头部 -->
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="header_1.jsp"></jsp:include>
 			<!-- 页面头部 /-->
 
 		<!-- 导航侧栏 -->
-		<jsp:include page="aside.jsp"></jsp:include>
+		<jsp:include page="aside_1.jsp"></jsp:include>
 		<!-- 导航侧栏 /-->
 
 		<!-- 内容区域 -->
 		<div class="content-wrapper">
-
-			<img src="${pageContext.request.contextPath}/img/center.jpg"
-				width="100%" height="100%" />
+			<img src="${pageContext.request.contextPath}/img/center.jpg" width="100%" height="100%" />
 
 		</div>
 		<!-- 内容区域 /-->

@@ -10,6 +10,9 @@ import java.util.List;
 
 public interface ProductDao {
 
+    @Select("select * from product where id = #{id}")
+    public Product findById(String id);
+
     @Select("select * from product")
     public List<Product> findAll();
 

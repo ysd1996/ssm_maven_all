@@ -3,6 +3,6 @@
 <html>
 <body>
 <%--<a href="/product/findAll.do">查询所有</a>--%>
-<jsp:include page="/pages/main_1.jsp"></jsp:include>
+<jsp:forward page="pages/main_1.jsp"></jsp:forward>
 </body>
 </html>

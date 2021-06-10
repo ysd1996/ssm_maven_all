@@ -29,8 +29,11 @@
         <property name="prefix" value="/pages/"></property>
     </bean>
 
-    <!--    释放静态资源-->
-    <mvc:default-servlet-handler/>
+    <!-- 设置静态资源不过滤 -->
+    <mvc:resources location="/css/" mapping="/css/**" />
+    <mvc:resources location="/img/" mapping="/img/**" />
+    <mvc:resources location="/js/" mapping="/js/**" />
+    <mvc:resources location="/plugins/" mapping="/plugins/**" />
 
 
 </beans>
