@@ -17,18 +17,20 @@ public class OrdersControllerr {
     private OrdersService ordersService;
 
     @RequestMapping("/findAll.do")
-    public ModelAndView findAll(@RequestParam(name = "page",required = true,defaultValue = "1")int page, @RequestParam(name = "size",required = true,defaultValue = "4")int size){
+    public ModelAndView findAll(@RequestParam(name = "page", required = true, defaultValue = "1") int page, @RequestParam(name = "size", required = true, defaultValue = "4") int size) {
         ModelAndView mv = new ModelAndView();
-        PageInfo pageInfo = new PageInfo(ordersService.findAll(page,size));
-        mv.addObject("pageInfo",pageInfo);
+        PageInfo pageInfo = new PageInfo(ordersService.findAll(page, size));
+        mv.addObject("pageInfo", pageInfo);
         mv.setViewName("orders-list_1");
         return mv;
     }
 
     @RequestMapping("/findById.do")
-    public ModelAndView findById(@RequestParam(name = "id",required = true) String ordersId){
+    public ModelAndView findById(@RequestParam(name = "id", required = true) String ordersId) {
         ModelAndView mv = new ModelAndView();
         Orders orders = ordersService.findById(ordersId);
+        mv.addObject("orders",orders);
+        mv.setViewName("orders-show");
 
         return mv;
     }

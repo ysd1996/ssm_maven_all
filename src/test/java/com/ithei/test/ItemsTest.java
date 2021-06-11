@@ -15,7 +15,7 @@ public class ItemsTest {
         //获取spring容器
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
         ProductService productService = ac.getBean(ProductService.class);
-        List<Product> products = productService.findAll();
+        List<Product> products = productService.findAll(1,3);
         System.out.println(products);
     }
 }
