@@ -25,12 +25,19 @@ public class UserController {
         return mv;
     }
 
-
     @RequestMapping("/save.do")
-    public String save(UserInfo userInfo){{
+    public String save(UserInfo userInfo){
         userService.save(userInfo);
         return "redirect:findAll.do";
+    }
 
+    @RequestMapping("/findById.do")
+    public ModelAndView findById(Integer id){
+        ModelAndView mv = new ModelAndView();
+        UserInfo userInfo = userService.findById(id);
+        mv.addObject("user",userInfo);
+        mv.setViewName("user-show");
+        return mv;
     }
-    }
+
 }

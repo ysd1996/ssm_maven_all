@@ -50,4 +50,9 @@ public class UserServiceImpl implements UserService {
         userInfo.setPassword(s);
         userDao.save(userInfo);
     }
+
+    public UserInfo findById(Integer id) {
+
+        return userDao.findById(id);
+    }
 }
