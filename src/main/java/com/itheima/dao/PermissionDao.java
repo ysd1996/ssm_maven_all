@@ -9,4 +9,7 @@ public interface PermissionDao {
 
     @Select("select * from permission where id in (select permissionId from role_permission where roleId = #{roleId})")
     public List<Permission> findByRoleId(Integer roleId);
+
+    @Select("select * from permission")
+    List<Permission> findAll();
 }

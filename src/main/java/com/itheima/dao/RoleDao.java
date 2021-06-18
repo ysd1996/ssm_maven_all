@@ -1,10 +1,7 @@
 package com.itheima.dao;
 
 import com.itheima.domain.Role;
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -18,4 +15,10 @@ public interface RoleDao {
             @Result(property = "permissions",column = "id",javaType = java.util.List.class,many = @Many(select = "com.itheima.dao.PermissionDao.findByRoleId")),
     })
     public List<Role> findByUserId(Integer userId);
+
+    @Select("select * from role")
+    public List<Role> findAll();
+
+    @Insert("insert into role(roleName,roleDesc) values(#{roleName},#{roleDesc})")
+    void save(Role role);
 }
