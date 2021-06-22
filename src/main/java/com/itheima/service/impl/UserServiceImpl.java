@@ -55,4 +55,14 @@ public class UserServiceImpl implements UserService {
 
         return userDao.findById(id);
     }
+
+    public List<Role> findOtherRoles(int userId) {
+        return userDao.findOtherRoles(userId);
+    }
+
+    public void addRoleToUser(String userId, String[] roleIds) {
+        for (String roleId: roleIds) {
+            userDao.addRoleToUser(userId,roleId);
+        }
+    }
 }

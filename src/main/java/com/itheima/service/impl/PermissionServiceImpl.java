@@ -21,4 +21,8 @@ public class PermissionServiceImpl implements PermissionService {
     public List<Permission> findAll() {
         return permissionDao.findAll();
     }
+
+    public void save(Permission permission) {
+        permissionDao.save(permission);
+    }
 }

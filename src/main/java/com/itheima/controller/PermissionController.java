@@ -25,4 +25,10 @@ public class PermissionController {
         return mv;
     }
 
+    @RequestMapping("/save.do")
+    public String save(Permission permission){
+        permissionService.save(permission);
+        return "redirect:findAll.do";
+    }
+
 }
