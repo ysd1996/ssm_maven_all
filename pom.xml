@@ -111,7 +111,7 @@
 
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
-      <artifactId>jsp-api</artifactId>
+      <artifactId>jsp-api</artifactId>r
       <version>2.0</version>
       <scope>provided</scope>
     </dependency>
